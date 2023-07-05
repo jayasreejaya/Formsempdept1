@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Employee Form</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label>Dept No</label>
+            <select name="deptno" id="deptno">
+                {% for d in LDO %}
+                <option value="{{d.deptno}}">{{d.deptno}}</option>
+                {%endfor%}
+            </select><br><br>
+            <label>EMp No</label>
+            <input type="number" name="e" id="empno"><br><br>
+            <label>Employee Name</label>
+            <input type="text" name="ename" id="ename"><br><br>
+            <label>Job</label>
+            <input type="text" name="job" id="job"><br>
+            <br>
+            <label>mgr</label>
+            <input type="number" name="mgr" id="mgr"><br><br>
+            <label>Hire date</label>
+            <input type="date" name="hiredate" id="hiredate"><br>
+            <label>sal</label>
+            <input type="number" name="sal" id="sal"><br><br>
+            <label>comm</label>
+            <input type="number" name="comm" id="comm"><br>
+            
+            <input type="submit" name="submit">
+        </form>
+    </center>
+</body>
+</html>
